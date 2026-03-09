@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Isa</title>
+
+<style>
+
+/* fondo */
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#ff7eb3,#ff758c,#ffb199);
+color:white;
+overflow:hidden;
+}
+
+/* contenedor */
+
+.container{
+padding:30px;
+position:relative;
+z-index:10;
+}
+
+/* titulo */
+
+.titulo{
+font-size:38px;
+text-shadow:0 0 20px rgba(255,255,255,0.9);
+animation:brillar 3s infinite;
+}
+
+/* video */
+
+.video{
+margin-top:25px;
+width:90%;
+max-width:350px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+animation:flotar 3s infinite ease-in-out;
+}
+
+/* menu */
+
+.menu{
+margin-top:40px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+/* botones */
+
+.boton{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff4f81;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.boton:hover{
+transform:scale(1.15) rotate(-2deg);
+}
+
+/* corazones */
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:caer linear forwards;
+}
+
+@keyframes caer{
+0%{
+transform:translateY(-10vh);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+@keyframes flotar{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
+}
+
+@keyframes brillar{
+0%{text-shadow:0 0 10px white}
+50%{text-shadow:0 0 25px white}
+100%{text-shadow:0 0 10px white}
+}
+
+/* celular */
+
+@media(max-width:600px){
+
+.titulo{
+font-size:28px;
+}
+
+.boton{
+font-size:16px;
+padding:12px 25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="titulo">Feliz cumpleaños Isa 🎉</h1>
+
+<video class="video" autoplay loop muted playsinline>
+<source src="baile.mp4" type="video/mp4">
+Tu navegador no soporta video
+</video>
+
+<div class="menu">
+
+
+<a href="mensajes.html">
+<button class="boton">💌 Mensajes</button>
+</a>
+
+<a href="imagenes.html">
+<button class="boton">📸 Imágenes</button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+/* spam de corazones */
+
+function crearCorazon(){
+
+const heart = document.createElement("div")
+
+heart.classList.add("heart")
+
+heart.innerHTML="❤"
+
+heart.style.left=Math.random()*100+"vw"
+
+heart.style.fontSize=(Math.random()*20+15)+"px"
+
+heart.style.animationDuration=(Math.random()*3+3)+"s"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{
+heart.remove()
+},6000)
+
+}
+
+setInterval(crearCorazon,200)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mensajes para Isa</title>
+
+<style>
+
+/* fondo */
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#ff7eb3,#ff758c,#ffb199);
+color:white;
+overflow:hidden;
+}
+
+/* titulo */
+
+.titulo{
+margin-top:40px;
+font-size:38px;
+text-shadow:0 0 20px rgba(255,255,255,0.9);
+animation:brillar 3s infinite;
+}
+
+/* contenedor */
+
+.container{
+margin-top:60px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+/* botones */
+
+.boton{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff4f81;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.boton:hover{
+transform:scale(1.15) rotate(-2deg);
+}
+
+/* corazones */
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:caer linear forwards;
+}
+
+@keyframes caer{
+
+0%{
+transform:translateY(-10vh);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
+/* brillo titulo */
+
+@keyframes brillar{
+
+0%{text-shadow:0 0 10px white}
+50%{text-shadow:0 0 25px white}
+100%{text-shadow:0 0 10px white}
+
+}
+
+/* celular */
+
+@media(max-width:600px){
+
+.titulo{
+font-size:28px;
+}
+
+.boton{
+font-size:16px;
+padding:12px 25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="titulo">Mensajes para Isa 💌</h1>
+
+<div class="container">
+
+<button class="boton" onclick="mensaje1()">LEEEEME </button>
+
+<button class="boton" onclick="mensaje2()">LEMEEE A MI</button>
+
+<button class="boton" onclick="mensaje3()">NO, A MI</button>
+
+<button class="boton" onclick="mensaje4()">A MIIIIIIIIIIII</button>
+
+<button class="boton" onclick="mensaje5()">A MI PORFI </button>
+
+</div>
+
+<script>
+
+/* mensajes */
+
+function mensaje1(){
+alert("A veces las personas más especiales no son las que más ruido hacen sino las que tienen una forma única de estar en el mundo tú eres así Isa alguien que deja una huella tranquila pero profunda y aunque haya distancia entre nosotros igual te tengo mucho cariño y siempre voy a desear que encuentres muchas razones para sentirte feliz ✨")
+}
+
+function mensaje2(){
+alert("Isa aunque hoy sea un día tranquilo quiero que sepas que hay alguien que piensa en ti y que desea que la vida te regale momentos suaves días que te hagan sonreír y caminos que te lleven a lugares bonitos porque aunque a veces el mundo sea ruidoso tu forma de ser tiene una paz que lo hace más bonito💫")
+}
+
+function mensaje3(){
+alert("Hay personas que hablan con palabras y hay personas que hablan con su forma de ser con su calma con sus gestos y con su manera de mirar el mundo tú eres de esas personas Isa y por eso tu presencia tiene algo especial algo tranquilo algo sincero que se queda en la memoria de quienes tienen la suerte de conocerte 🎂")
+}
+
+function mensaje4(){
+alert("Isa a veces la distancia parece grande pero hay personas que igual encuentran la forma de quedarse cerca de uno tú eres una de esas personas aunque no siempre podamos estar en el mismo lugar o compartir los días como nos gustaría igual me alegra saber que existes en mi vida porque hay presencias que se sienten incluso cuando están lejos y la tuya es una de las más bonitas😊")
+}
+
+function mensaje5(){
+alert("Isa hoy el mundo suma un día más desde que llegaste a él y aunque sé que para ti los cumpleaños muchas veces pasan en silencio igual quiero que este día tenga un pequeño brillo para ti porque hay personas que no necesitan decir mucho para llenar un lugar de calma y tú eres una de ellas tu forma de mirar tu forma de estar tu manera tranquila de existir dicen mucho más que cualquier palabra y por eso hoy quiero recordarte lo especial que eres y lo bonito que es coincidir contigo en este mundo💖")
+}
+
+/* spam corazones */
+
+function crearCorazon(){
+
+const heart=document.createElement("div")
+
+heart.classList.add("heart")
+
+heart.innerHTML="❤"
+
+heart.style.left=Math.random()*100+"vw"
+
+heart.style.fontSize=(Math.random()*20+15)+"px"
+
+heart.style.animationDuration=(Math.random()*3+3)+"s"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{
+heart.remove()
+},6000)
+
+}
+
+setInterval(crearCorazon,200)
+
+</script>
+
+</body>
+</html>
