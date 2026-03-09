@@ -44,13 +44,14 @@ width:100%;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
 transition:0.3s;
+cursor:pointer;
 }
 
 .galeria img:hover{
 transform:scale(1.1);
 }
 
-/* boton */
+/* boton volver */
 
 .volver{
 margin:30px;
@@ -105,25 +106,21 @@ animation:caer linear forwards;
 
 <script>
 
+/* cargar imagenes del 1 al 6 */
+
 const galeria = document.getElementById("galeria")
 
-/* imagenes 1-10 */
+for(let i=1;i<=6;i++){
 
-for(let i=1;i<=10;i++){
 let img=document.createElement("img")
+
 img.src=i+".png"
+
 galeria.appendChild(img)
+
 }
 
-/* imagenes 12 (1) a 12 (24) */
-
-for(let i=1;i<=24;i++){
-let img=document.createElement("img")
-img.src="12 ("+i+").png"
-galeria.appendChild(img)
-}
-
-/* corazones */
+/* corazones cayendo */
 
 function crearCorazon(){
 
